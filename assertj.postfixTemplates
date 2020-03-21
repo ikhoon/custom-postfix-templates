@@ -1,0 +1,50 @@
+## Templates for assertj ##
+.assertThat : assertj-core assertThat
+    io.vavr.Lazy                    →  [SKIP]
+    io.vavr.control.Either          →  [SKIP]
+    io.vavr.control.Validation      →  [SKIP]
+    io.vavr.control.Option          →  [SKIP]
+    io.vavr.control.Try             →  [SKIP]
+    io.vavr.collection.Seq          →  [SKIP]
+    io.vavr.collection.Map          →  [SKIP]
+    ANY               [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$) [USE_STATIC_IMPORTS]
+
+.assertCall : assertj-core assertCall
+    ANY               [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThatCode(() -> $expr$) [USE_STATIC_IMPORTS]
+
+.assertEqualTo : assertj-core assertEqualTo
+    ANY               [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isEqualTo($other$)$END) [USE_STATIC_IMPORTS]
+
+.assertNull : assertj-core assertNull
+    ANY               [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isNull() [USE_STATIC_IMPORTS]
+
+.assertNotNull : assertj-core assertNotNull
+    ANY               [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isNotNull() [USE_STATIC_IMPORTS]
+
+.assertBlank : assertj-core assertBlank
+    java.lang.String  [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isBlank() [USE_STATIC_IMPORTS]
+
+.assertNotBlank : assertj-core assertNotBlank
+    java.lang.String  [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isNotBlank() [USE_STATIC_IMPORTS]
+
+.assertTrue : assertj-core assertTrue
+    BOOLEAN           [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isTrue() [USE_STATIC_IMPORTS]
+
+.assertFalse : assertj-core assertFalse
+    BOOLEAN           [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isFalse() [USE_STATIC_IMPORTS]
+
+.assertEmpty : assertj-core assertEmpty
+    ARRAY               [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isEmpty() [USE_STATIC_IMPORTS]
+    java.util.Map       [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isEmpty() [USE_STATIC_IMPORTS]
+    java.lang.Iterable  [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isEmpty() [USE_STATIC_IMPORTS]
+
+.assertNotEmpty : assertj-core assertNotEmpty
+    ARRAY               [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isNotEmpty() [USE_STATIC_IMPORTS]
+    java.util.Map       [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isNotEmpty() [USE_STATIC_IMPORTS]
+    java.lang.Iterable  [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThat($expr$).isNotEmpty() [USE_STATIC_IMPORTS]
+
+.assertThrowException : assertj-core assertThrowException
+    ANY                 [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThatThrownBy(() -> $expr$) [USE_STATIC_IMPORTS]
+
+.assertNotThrowException : assertj-core assertNotThrowException
+    ANY                 [org.assertj.core.api.Assertions]     →  org.assertj.core.api.Assertions.assertThatCode(() -> $expr$).doesNotThrowAnyException() [USE_STATIC_IMPORTS]
