@@ -1,4 +1,10 @@
 ## Templates for guava ##
 
 .toIList : convert to ImmutableList
-  java.util.stream.Stream  ->  $expr$.collect(com.google.common.collect.ImmutableList.toImmutableList())
+  java.util.stream.Stream -> $expr$.collect(com.google.common.collect.ImmutableList.toImmutableList()); [USE_STATIC_IMPORTS]
+
+.checkArgument : check argument
+  BOOLEAN -> com.google.common.base.Preconditions.checkArgument($expr$, "$END$"); [USE_STATIC_IMPORTS]
+
+.checkArgument : check state
+  BOOLEAN -> com.google.common.base.Preconditions.checkState($expr$, "$END$"); [USE_STATIC_IMPORTS]

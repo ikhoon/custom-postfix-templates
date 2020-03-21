@@ -1,8 +1,8 @@
 ## Templates for Java Objects ##
 
 .rnn: Objects requireNonNull-void
-    ANY               [java.util.Objects]     →  java.util.Objects.requireNonNull($expr$, "$expr$") [USE_STATIC_IMPORTS]
+    ANY               [java.util.Objects]     →  java.util.Objects.requireNonNull($expr$, "$expr$"); [USE_STATIC_IMPORTS]
 
 .rna: Objects requireNonNull-field
-    ANY               [java.util.Objects]     →  this.$expr$ = java.util.Objects.requireNonNull($expr$, "$expr$") [USE_STATIC_IMPORTS]
+    ANY               [java.util.Objects]     →  this.$expr$ = java.util.Objects.requireNonNull($expr$, "$expr$"); [USE_STATIC_IMPORTS]
 
