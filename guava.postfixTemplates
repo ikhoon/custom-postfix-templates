@@ -1,0 +1,4 @@
+## Templates for guava ##
+
+.toList : convert to ImmutableList
+  java.util.stream.Stream  ->  $expr$.collect(com.google.common.collect.ImmutableList.toImmutableList())
